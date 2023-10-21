@@ -2,8 +2,25 @@ import { useState } from "react";
 import { Navbar } from "flowbite-react";
 import "./App.css";
 
-function App() {
+//NAMA FUNCTION DI REACT HARUS KAPITAL DI DEPANN
+function Penghitung() {
   const [hitungan, setHitungan] = useState(0);
+
+  return (
+    <>
+      <div className="p-5 bg-slate-200">
+        <button
+          className="p-3 w-56 bg-blue-500 rounded-lg shadow-lg"
+          onClick={() => setHitungan(hitungan + 1)}
+        >
+          Counter: {hitungan}
+        </button>
+      </div>
+    </>
+  );
+}
+
+function App() {
   return (
     <>
       <Navbar fluid rounded>
@@ -23,10 +40,10 @@ function App() {
           <Navbar.Link href="#">Contact</Navbar.Link>
         </Navbar.Collapse>
       </Navbar>
-      <div>
-        <div>Counter: {hitungan}</div>
-        <button onClick={() => setHitungan(hitungan + 1)}>KLIK</button>
-      </div>
+      {/* CARA MANGGIL COMPONENT YANG KITA BUAT */}
+      <Penghitung />
+      <Penghitung />
+      <Penghitung />
     </>
   );
 }
