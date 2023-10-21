@@ -21,6 +21,8 @@ function Penghitung() {
 }
 
 function App() {
+  const [daftar, setDaftar] = useState([1, 2, 3]);
+
   return (
     <>
       <Navbar fluid rounded>
@@ -44,6 +46,9 @@ function App() {
       <Penghitung />
       <Penghitung />
       <Penghitung />
+      <div>{daftar.join(",")}</div>
+      <button onClick={() => setDaftar([...daftar, 1])}>Tambah angka 1</button>
+      <button onClick={() => setDaftar([...daftar, 2])}>Tambah angka 2</button>
     </>
   );
 }
